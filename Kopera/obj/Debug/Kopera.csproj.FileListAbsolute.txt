@@ -1,0 +1,10 @@
+c:\documents and settings\kaczmarzyk\moje dokumenty\visual studio 2010\Projects\Kopera\Kopera\bin\Kopera.dll
+c:\documents and settings\kaczmarzyk\moje dokumenty\visual studio 2010\Projects\Kopera\Kopera\bin\Kopera.pdb
+c:\documents and settings\kaczmarzyk\moje dokumenty\visual studio 2010\Projects\Kopera\Kopera\obj\Debug\ResolveAssemblyReference.cache
+c:\documents and settings\kaczmarzyk\moje dokumenty\visual studio 2010\Projects\Kopera\Kopera\obj\Debug\Kopera.dll
+c:\documents and settings\kaczmarzyk\moje dokumenty\visual studio 2010\Projects\Kopera\Kopera\obj\Debug\Kopera.pdb
+I:\Kopera\Kopera\bin\Kopera.dll
+I:\Kopera\Kopera\bin\Kopera.pdb
+I:\Kopera\Kopera\obj\Debug\ResolveAssemblyReference.cache
+I:\Kopera\Kopera\obj\Debug\Kopera.dll
+I:\Kopera\Kopera\obj\Debug\Kopera.pdb
