@@ -8,3 +8,8 @@ I:\Kopera\Kopera\bin\Kopera.pdb
 I:\Kopera\Kopera\obj\Debug\ResolveAssemblyReference.cache
 I:\Kopera\Kopera\obj\Debug\Kopera.dll
 I:\Kopera\Kopera\obj\Debug\Kopera.pdb
+D:\projekt-sklep\Kopera\bin\Kopera.dll
+D:\projekt-sklep\Kopera\bin\Kopera.pdb
+D:\projekt-sklep\Kopera\obj\Debug\ResolveAssemblyReference.cache
+D:\projekt-sklep\Kopera\obj\Debug\Kopera.dll
+D:\projekt-sklep\Kopera\obj\Debug\Kopera.pdb

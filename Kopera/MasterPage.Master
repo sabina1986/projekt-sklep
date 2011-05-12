@@ -1,9 +1,11 @@
 ﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="MasterPage.master.cs" Inherits="Kopera.MasterPage" %>
+<%@ Register TagPrefix="StopkaFV" TagName="stopka" Src="~/Stopka.ascx" %>
 
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head runat="server">
+    <link href="../Wyglad/szablon.css" rel="stylesheet" type="text/css" />
     <title></title>
     <asp:ContentPlaceHolder ID="head" runat="server">
     </asp:ContentPlaceHolder>
@@ -71,7 +73,9 @@
             </td>
         </tr>
         <tr>
-            <td colspan="2"><center>copyright kaczmarzyk</center></td>
+            <td colspan="2">
+             <div id="footer">
+                  <StopkaFV:stopka ID="stopka1" runat="server" />
         </tr>
     </table>
     

@@ -62,6 +62,8 @@
     <Content Include="Scripts\jquery-1.4.1-vsdoc.js" />
     <Content Include="Scripts\jquery-1.4.1.js" />
     <Content Include="Scripts\jquery-1.4.1.min.js" />
+    <Content Include="Stopka.ascx" />
+    <Content Include="Wyglad\szablon.css" />
     <Content Include="Ubrania.aspx" />
     <Content Include="Web.config" />
     <Content Include="Web.Debug.config">
@@ -135,6 +137,13 @@
     </Compile>
     <Compile Include="Rozne.aspx.designer.cs">
       <DependentUpon>Rozne.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Stopka.ascx.cs">
+      <DependentUpon>Stopka.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Stopka.ascx.designer.cs">
+      <DependentUpon>Stopka.ascx</DependentUpon>
     </Compile>
     <Compile Include="Ubrania.aspx.cs">
       <DependentUpon>Ubrania.aspx</DependentUpon>
