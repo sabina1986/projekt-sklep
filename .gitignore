@@ -5,3 +5,4 @@
 *.suo
 *.stackdump     
 Kopera/bin    # ignoruj wszystkie pliki w katalogu build/
+Kopera/obj

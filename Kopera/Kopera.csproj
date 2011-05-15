@@ -63,6 +63,9 @@
     <Content Include="Scripts\jquery-1.4.1.js" />
     <Content Include="Scripts\jquery-1.4.1.min.js" />
     <Content Include="Stopka.ascx" />
+    <Content Include="Wyglad\215.jpg" />
+    <Content Include="Wyglad\baner1.jpg" />
+    <Content Include="Wyglad\baner2.jpg" />
     <Content Include="Wyglad\szablon.css" />
     <Content Include="Ubrania.aspx" />
     <Content Include="Web.config" />
