@@ -50,6 +50,9 @@
     <Content Include="Admin.aspx" />
     <Content Include="Agregaty.aspx" />
     <Content Include="App_Data\Kopera.mdf" />
+    <Content Include="App_Data\Kopera_log.ldf">
+      <DependentUpon>Kopera.mdf</DependentUpon>
+    </Content>
     <Content Include="Default.aspx" />
     <Content Include="Images\car.jpg" />
     <Content Include="Images\car_do.jpg" />
@@ -159,6 +162,7 @@
     </Compile>
     <Compile Include="Stopka.ascx.cs">
       <DependentUpon>Stopka.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="Stopka.ascx.designer.cs">
       <DependentUpon>Stopka.ascx</DependentUpon>

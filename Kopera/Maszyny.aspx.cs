@@ -14,7 +14,8 @@ namespace Kopera
     public partial class Maszyny : System.Web.UI.Page
     {
         
-        public string connectionString="Data Source='KACZMARZ-EB27C1\\SQLEXPRESS';Integrated Security=True;Pooling=False;Initial Catalog='Kopera'";
+        //public string connectionString="Data Source='KACZMARZ-EB27C1\\SQLEXPRESS';Integrated Security=True;Pooling=False;Initial Catalog='Kopera'";
+        public string connectionString = "Data Source=.\\SQLEXPRESS;AttachDbFilename=|DataDirectory|\\Kopera.mdf;Integrated Security=True;User Instance=True";
         public static DataTable dt;
 
         protected void Page_Load(object sender, EventArgs e)

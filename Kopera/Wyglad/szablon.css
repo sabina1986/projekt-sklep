@@ -4,3 +4,13 @@
     background-image: url(./215.jpg);
     font-family: Georgia;
 }
+
+a:visited, a:link
+{
+    color: Blue;    
+}
+        
+a:active, a:hover
+{
+    color: Black;    
+}
