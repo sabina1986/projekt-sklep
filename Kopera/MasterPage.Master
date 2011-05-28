@@ -1,9 +1,11 @@
 ﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="MasterPage.master.cs" Inherits="Kopera.MasterPage" %>
+<%@ Register TagPrefix="StopkaFV" TagName="stopka" Src="~/Stopka.ascx" %>
 
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 
 <html xmlns="http://www.w3.org/1999/xhtml">
-<head runat="server">
+<head id="Head1" runat="server">
+    <link href="../Wyglad/szablon.css" rel="stylesheet" type="text/css" />
     <title></title>
     <asp:ContentPlaceHolder ID="head" runat="server">
     </asp:ContentPlaceHolder>
@@ -34,16 +36,26 @@
     </style>
 </head>
 <body>
-    <form id="form1" runat="server">
+    <form id="form2" runat="server">
+
     
-    <table class="style1" border="3">
-        <tr>
-            <td colspan="2"><center class="style3">www.kopera.pl</center></td>
-        </tr>
-        <tr>
-            <td class="style2">
+        <div id="header" style="width: 100%;">
+            <div id="title" 
+                style="background-image: url('../Wyglad/baner1.jpg'); height: 156px;" />
+              
+            <div id="logindisplay">
+                
+            </div> 
+         </div>   
+
+    <div id="page" style="display:inline-table; height: 75%; width: 100%;">
+
+            
+
+            <div id="menucontainer" style="float: left; width: 24%; height: 75%;">
+            
                 <asp:SiteMapPath ID="SiteMapPath1" runat="server" Font-Names="Verdana" 
-                    Font-Size="0.8em" PathSeparator=" : ">
+                    Font-Size="0.8em" PathSeparator=" : " >
                     <CurrentNodeStyle ForeColor="#333333" />
                     <NodeStyle Font-Bold="True" ForeColor="#990000" />
                     <PathSeparatorStyle Font-Bold="True" ForeColor="#990000" />
@@ -53,28 +65,34 @@
                 <asp:SiteMapDataSource ID="SiteMapDataSource1" runat="server" />
                 <br />
                 <br />
-                <asp:TreeView ID="TreeView1" runat="server" DataSourceID="SiteMapDataSource1" 
+                <asp:TreeView ID="TreeView1" runat="server" DataSourceID="SiteMapDataSource1"
                     onselectednodechanged="TreeView1_SelectedNodeChanged">
                 </asp:TreeView>
                 <br />
                 <br />
                 Pasek nawigacji<br />
                 <br />
-                <asp:Button ID="ButtonAdmin" runat="server" onclick="ButtonAdmin_Click" 
+                <asp:Button ID="Button1" runat="server" onclick="ButtonAdmin_Click" 
                     Text="Admin" />
-            </td>
-            <td class="style4">
-       
-        <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
+  
+            </div>
+          
+        <div id="main" style="float: right; width: 74%; height: 75%">
+                     
+         <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
         
         </asp:ContentPlaceHolder>
-            </td>
-        </tr>
-        <tr>
-            <td colspan="2"><center>copyright Kowalczyk&Kaczmarzyk</center></td>
-        </tr>
-    </table>
+
+        </div> 
+</div>
+            <div id="stopka" style="width: 100%; height:auto;">
+            <StopkaFV:stopka ID="stopka2" runat="server" />
+            </div>       
     
-   </form>
+
+</form>
+
+        
+
 </body>
 </html>

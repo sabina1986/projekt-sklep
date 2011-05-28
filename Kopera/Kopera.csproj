@@ -49,6 +49,7 @@
   <ItemGroup>
     <Content Include="Admin.aspx" />
     <Content Include="Agregaty.aspx" />
+    <Content Include="App_Data\Kopera.mdf" />
     <Content Include="Default.aspx" />
     <Content Include="Images\car.jpg" />
     <Content Include="Images\car_do.jpg" />
@@ -64,6 +65,7 @@
     <Content Include="Scripts\jquery-1.4.1.js" />
     <Content Include="Scripts\jquery-1.4.1.min.js" />
     <Content Include="Odziez.aspx" />
+    <Content Include="Stopka.ascx" />
     <Content Include="Web.config" />
     <Content Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
@@ -71,6 +73,10 @@
     <Content Include="Web.Release.config">
       <DependentUpon>Web.config</DependentUpon>
     </Content>
+    <Content Include="Wyglad\215.jpg" />
+    <Content Include="Wyglad\baner1.jpg" />
+    <Content Include="Wyglad\baner2.jpg" />
+    <Content Include="Wyglad\szablon.css" />
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Admin.aspx.cs">
@@ -151,10 +157,15 @@
     <Compile Include="Odziez.aspx.designer.cs">
       <DependentUpon>Odziez.aspx</DependentUpon>
     </Compile>
+    <Compile Include="Stopka.ascx.cs">
+      <DependentUpon>Stopka.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="Stopka.ascx.designer.cs">
+      <DependentUpon>Stopka.ascx</DependentUpon>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Agregaty\" />
-    <Folder Include="App_Data\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="MasterPage.Master" />
