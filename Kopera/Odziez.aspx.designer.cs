@@ -10,15 +10,15 @@
 namespace Kopera {
     
     
-    public partial class MaterialyBudowlane {
+    public partial class Ubrania {
         
         /// <summary>
-        /// PanelMaterialyBudowlane control.
+        /// PanelOdziez control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Panel PanelMaterialyBudowlane;
+        protected global::System.Web.UI.WebControls.Panel PanelOdziez;
     }
 }

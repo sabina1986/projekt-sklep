@@ -7,7 +7,7 @@
         <siteMapNode url="Agregaty.aspx" title="Agregaty"  description="" />
         <siteMapNode url="Maszyny.aspx" title="Maszyny"  description="" />
         <siteMapNode url="MaterialyBudowlane.aspx" title="Matrialy Budowlane"  description="" />
-        <siteMapNode url="Ubrania.aspx" title="Ubrania"  description="" />
+        <siteMapNode url="Odziez.aspx" title="Odziez"  description="" />
         <siteMapNode url="Rozne.aspx" title="Rozne"  description="" />
      </siteMapNode>
 </siteMap>

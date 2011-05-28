@@ -40,6 +40,15 @@ namespace Kopera {
         protected global::System.Web.UI.WebControls.Panel PanelDodaj;
         
         /// <summary>
+        /// labelKategoria control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label labelKategoria;
+        
+        /// <summary>
         /// ListBoxKategoriaDodaj control.
         /// </summary>
         /// <remarks>
@@ -67,6 +76,15 @@ namespace Kopera {
         protected global::System.Web.UI.WebControls.TextBox TextBoxCena;
         
         /// <summary>
+        /// ButtonAkceptuj control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button ButtonAkceptuj;
+        
+        /// <summary>
         /// FileUploadZdjecie control.
         /// </summary>
         /// <remarks>
@@ -83,15 +101,6 @@ namespace Kopera {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Button ButtonDodajZdjecie;
-        
-        /// <summary>
-        /// ButtonAkceptuj control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Button ButtonAkceptuj;
         
         /// <summary>
         /// PanelUsun control.

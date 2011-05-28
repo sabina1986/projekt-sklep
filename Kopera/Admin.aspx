@@ -16,16 +16,17 @@
     <br />
     <br />
     Wybierz kategorie:
+    <asp:Label ID="labelKategoria" runat="server"></asp:Label>
     <br />
     &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
     <asp:ListBox ID="ListBoxKategoriaDodaj" runat="server" Height="122px">
         <asp:ListItem Value="Agregaty"></asp:ListItem>
         <asp:ListItem Value="Maszyny"></asp:ListItem>
         <asp:ListItem Value="Materialy Budowlane">Materialy Budowlane</asp:ListItem>
-        <asp:ListItem Value="Odzież"></asp:ListItem>
+        <asp:ListItem Value="Odziez">Odziez</asp:ListItem>
         <asp:ListItem Value="Opony"></asp:ListItem>
         <asp:ListItem Value="Pojazdy"></asp:ListItem>
-        <asp:ListItem Value="Różne"></asp:ListItem>
+        <asp:ListItem Value="Rożne">Rożne</asp:ListItem>
     </asp:ListBox>
     <br />
     <br />
@@ -39,17 +40,20 @@
     &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
     <asp:TextBox ID="TextBoxCena" runat="server" Width="200px"></asp:TextBox>
     <br />
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+    <asp:Button ID="ButtonAkceptuj" runat="server" onclick="ButtonAkceptuj_Click" 
+        Text="Akceptuj" />
     <br />
     Zdjecie:<br /> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
     <asp:FileUpload ID="FileUploadZdjecie" runat="server" />
     <br />
     &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-    <asp:Button ID="ButtonDodajZdjecie" runat="server" Text="Dodaj" Width="217px" />
+    <asp:Button ID="ButtonDodajZdjecie" runat="server" Text="Dodaj" Width="215px" 
+        onclick="ButtonDodajZdjecie_Click" />
     <br />
     &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
     <br />
     <center>
-    <asp:Button ID="ButtonAkceptuj" runat="server" Text="Akceptuj" />
     </center>
     <br />
     
@@ -74,13 +78,17 @@
     <br />
     <br />
     &nbsp;&nbsp;&nbsp;&nbsp;
-    <asp:GridView ID="GridViewKategoria" runat="server" AutoGenerateColumns="False">
+    <asp:GridView ID="GridViewKategoria" runat="server" AutoGenerateColumns="False" 
+        EnableModelValidation="True" 
+        onselectedindexchanging="GridViewKategoria_SelectedIndexChanging">
         <Columns>
             <asp:BoundField DataField="id" HeaderText="id" InsertVisible="False" 
                 ReadOnly="True" SortExpression="id" />
             <asp:BoundField DataField="opis" HeaderText="opis" SortExpression="opis" />
             <asp:BoundField DataField="cena" HeaderText="cena" SortExpression="cena" />
             <asp:BoundField DataField="foto" HeaderText="foto" SortExpression="foto" />
+            <asp:ButtonField ButtonType="Button" CommandName="Select" HeaderText="Usun" 
+                ShowHeader="True" Text="Usun" />
         </Columns>
     </asp:GridView>
     

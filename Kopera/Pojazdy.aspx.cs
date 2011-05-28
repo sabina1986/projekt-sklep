@@ -28,33 +28,47 @@ namespace Kopera
             Label labelCena;
             Image image;
 
+           
+
+            //List<string> nameFile = LoadNameFotoPojazdy(dt[i].);
+
             for (int i = 0; i < dt.Rows.Count; ++i)
             {
                 labelOpis = new Label();
                 labelCena = new Label();
-                image = new Image();
+                
 
                 labelOpis.ID = "labelOpis"+i;
                 labelCena.ID = "labelcena"+i;
-                image.ID = "image"+i;
+
                 object[] table = dt.Rows[i].ItemArray;
                 labelOpis.Text = (string)table[1];
                 labelCena.Text = table[2].ToString();
-                string nazwaPliku = (string)table[3];
-                string sciezka = Server.MapPath("~/Pojazdy/" + nazwaPliku);
-                FileInfo file = new FileInfo(sciezka);
-                if (file.Exists)
-                {
-                    image.ImageUrl = sciezka;
-                    image.AlternateText = "cos zezarlo obraz";
-                }
-                else
-                {
-                    image.AlternateText = "cos zezarlo obraz";
-                }
 
-                PanelPojazdy.Controls.Add(new LiteralControl("<br/><br/>"));
-                PanelPojazdy.Controls.Add(image);
+                List<string> nameFile = LoadNameFotoPojazdy((string)table[3]);
+
+                for (int j = 0; j < nameFile.Count; ++j)
+                {
+                    image = new Image();
+                    image.ID = "image" + i + "" + j;
+
+                    string sciezka = Server.MapPath("~/Pojazdy/" + nameFile[j]);
+
+                    FileInfo file = new FileInfo(sciezka);
+                    if (file.Exists)
+                    {
+                        image.ImageUrl = sciezka;
+                        image.AlternateText = "cos zezarlo obraz";
+                    }
+                    else
+                    {
+                        image.AlternateText = "cos zezarlo obraz";
+                    }
+
+                    PanelPojazdy.Controls.Add(new LiteralControl("<br/><br/>"));
+                    PanelPojazdy.Controls.Add(image);
+                    PanelPojazdy.Controls.Add(new LiteralControl("<br/><br/>"));
+                }
                 PanelPojazdy.Controls.Add(new LiteralControl("<br/><br/>"));
                 PanelPojazdy.Controls.Add(new LiteralControl("<br/><br/>"));
                 PanelPojazdy.Controls.Add(labelOpis);
@@ -73,6 +87,23 @@ namespace Kopera
             DataSet ds = new DataSet();
             dataAdapter.Fill(ds, "Pojazdy");
             dt = ds.Tables["Pojazdy"];
+        }
+        private List<string> LoadNameFotoPojazdy(string id_foto)
+        {
+            List<string> nameFile = new List<string>();
+            string sqlQuery = "select name from Foto where id_foto='" + id_foto +"';";
+            SqlDataAdapter dataAdapterFoto = new SqlDataAdapter(sqlQuery, connectionString);
+            DataSet dsFoto = new DataSet();
+            dataAdapterFoto.Fill(dsFoto, "Foto");
+            DataTable dtFoto = dsFoto.Tables["Foto"];
+
+            for (int i = 0; i < dtFoto.Rows.Count; ++i)
+            {
+                object[] name = dtFoto.Rows[i].ItemArray;
+                nameFile.Add((string)name[0]);
+            }
+
+           return nameFile;
         }
     }
 }

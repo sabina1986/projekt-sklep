@@ -52,6 +52,7 @@
     <Content Include="Default.aspx" />
     <Content Include="Images\car.jpg" />
     <Content Include="Images\car_do.jpg" />
+    <Content Include="Logowanie.aspx" />
     <Content Include="Maszyny.aspx" />
     <Content Include="MaterialyBudowlane.aspx" />
     <Content Include="Opony.aspx" />
@@ -62,12 +63,7 @@
     <Content Include="Scripts\jquery-1.4.1-vsdoc.js" />
     <Content Include="Scripts\jquery-1.4.1.js" />
     <Content Include="Scripts\jquery-1.4.1.min.js" />
-    <Content Include="Stopka.ascx" />
-    <Content Include="Wyglad\215.jpg" />
-    <Content Include="Wyglad\baner1.jpg" />
-    <Content Include="Wyglad\baner2.jpg" />
-    <Content Include="Wyglad\szablon.css" />
-    <Content Include="Ubrania.aspx" />
+    <Content Include="Odziez.aspx" />
     <Content Include="Web.config" />
     <Content Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
@@ -97,6 +93,13 @@
     </Compile>
     <Compile Include="Default.aspx.designer.cs">
       <DependentUpon>Default.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Logowanie.aspx.cs">
+      <DependentUpon>Logowanie.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Logowanie.aspx.designer.cs">
+      <DependentUpon>Logowanie.aspx</DependentUpon>
     </Compile>
     <Compile Include="MasterPage.Master.cs">
       <DependentUpon>MasterPage.Master</DependentUpon>
@@ -141,22 +144,16 @@
     <Compile Include="Rozne.aspx.designer.cs">
       <DependentUpon>Rozne.aspx</DependentUpon>
     </Compile>
-    <Compile Include="Stopka.ascx.cs">
-      <DependentUpon>Stopka.ascx</DependentUpon>
+    <Compile Include="Odziez.aspx.cs">
+      <DependentUpon>Odziez.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="Stopka.ascx.designer.cs">
-      <DependentUpon>Stopka.ascx</DependentUpon>
-    </Compile>
-    <Compile Include="Ubrania.aspx.cs">
-      <DependentUpon>Ubrania.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="Ubrania.aspx.designer.cs">
-      <DependentUpon>Ubrania.aspx</DependentUpon>
+    <Compile Include="Odziez.aspx.designer.cs">
+      <DependentUpon>Odziez.aspx</DependentUpon>
     </Compile>
   </ItemGroup>
   <ItemGroup>
+    <Folder Include="Agregaty\" />
     <Folder Include="App_Data\" />
   </ItemGroup>
   <ItemGroup>
