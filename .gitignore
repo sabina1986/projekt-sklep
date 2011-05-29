@@ -4,5 +4,6 @@
 *.cache
 *.suo
 *.stackdump     
-Kopera/bin    # ignoruj wszystkie pliki w katalogu build/
-Kopera/obj
+Kopera/App_Data/
+Kopera/bin/    # ignoruj wszystkie pliki w katalogu build/
+Kopera/obj/
