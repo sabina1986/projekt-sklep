@@ -59,7 +59,11 @@
     <Content Include="Images\car_do.jpg" />
     <Content Include="Logowanie.aspx" />
     <Content Include="Maszyny.aspx" />
+    <Content Include="Maszyny\maszyny.jpg" />
     <Content Include="MaterialyBudowlane.aspx" />
+    <Content Include="obj\Debug\Kopera.csproj.FileListAbsolute.txt" />
+    <Content Include="obj\Debug\Kopera.dll" />
+    <Content Include="obj\Debug\Kopera.pdb" />
     <Content Include="Opony.aspx" />
     <Content Include="Pojazdy.aspx" />
     <Content Include="Pojazdy\audi.jpg" />
@@ -185,12 +189,19 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Agregaty\" />
+    <Folder Include="MaterialyBudowlane\" />
+    <Folder Include="obj\Debug\TempPE\" />
+    <Folder Include="Odziez\" />
+    <Folder Include="Rozne\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="MasterPage.Master" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="Web.sitemap" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="obj\Debug\DesignTimeResolveAssemblyReferencesInput.cache" />
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
   <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v10.0\WebApplications\Microsoft.WebApplication.targets" />
