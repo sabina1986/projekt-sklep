@@ -36,6 +36,7 @@
     <Reference Include="System.Data" />
     <Reference Include="System.Core" />
     <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Web.Entity" />
     <Reference Include="System.Web.Extensions" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Drawing" />
@@ -50,6 +51,9 @@
     <Content Include="Admin.aspx" />
     <Content Include="Agregaty.aspx" />
     <Content Include="App_Data\Kopera.mdf" />
+    <Content Include="App_Data\Kopera_log.ldf">
+      <DependentUpon>Kopera.mdf</DependentUpon>
+    </Content>
     <Content Include="Default.aspx" />
     <Content Include="Images\car.jpg" />
     <Content Include="Images\car_do.jpg" />
@@ -58,8 +62,22 @@
     <Content Include="MaterialyBudowlane.aspx" />
     <Content Include="Opony.aspx" />
     <Content Include="Pojazdy.aspx" />
-    <Content Include="Pojazdy\car.jpg" />
-    <Content Include="Pojazdy\car_do.jpg" />
+    <Content Include="Pojazdy\audi.jpg" />
+    <Content Include="Pojazdy\audi_2.jpg" />
+    <Content Include="Pojazdy\bmw.jpg" />
+    <Content Include="Pojazdy\hayabusa.jpg" />
+    <Content Include="Pojazdy\hayabusa2.jpg" />
+    <Content Include="Pojazdy\opel.jpg" />
+    <Content Include="Pojazdy\opel_2.jpg" />
+    <Content Include="Pojazdy\samochod.jpg" />
+    <Content Include="Pojazdy\samochodzik.jpg" />
+    <Content Include="Pojazdy\smart.jpg" />
+    <Content Include="Pojazdy\smart2.jpg" />
+    <Content Include="Pojazdy\sprinter.jpg" />
+    <Content Include="Pojazdy\sprinter_2.jpg" />
+    <Content Include="Pojazdy\yamaha r1_2.jpg" />
+    <Content Include="Pojazdy\yamaha.jpg" />
+    <Content Include="Pojazdy\yamaha_r1_3.jpg" />
     <Content Include="Rozne.aspx" />
     <Content Include="Scripts\jquery-1.4.1-vsdoc.js" />
     <Content Include="Scripts\jquery-1.4.1.js" />
@@ -159,6 +177,7 @@
     </Compile>
     <Compile Include="Stopka.ascx.cs">
       <DependentUpon>Stopka.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="Stopka.ascx.designer.cs">
       <DependentUpon>Stopka.ascx</DependentUpon>
