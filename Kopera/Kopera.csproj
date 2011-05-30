@@ -58,11 +58,30 @@
     <Content Include="Images\car_do.jpg" />
     <Content Include="Logowanie.aspx" />
     <Content Include="Maszyny.aspx" />
+    <Content Include="Maszyny\maszyny.jpg" />
     <Content Include="MaterialyBudowlane.aspx" />
     <Content Include="Opony.aspx" />
     <Content Include="Pojazdy.aspx" />
+    <Content Include="Agregaty\agregat_mobilny.jpg" />
+    <Content Include="Agregaty\agregat_wolny.jpg" />
+    <Content Include="Pojazdy\audi.jpg" />
+    <Content Include="Pojazdy\audi_2.jpg" />
+    <Content Include="Pojazdy\bmw.jpg" />
     <Content Include="Pojazdy\car.jpg" />
     <Content Include="Pojazdy\car_do.jpg" />
+    <Content Include="Pojazdy\hayabusa.jpg" />
+    <Content Include="Pojazdy\hayabusa2.jpg" />
+    <Content Include="Pojazdy\opel.jpg" />
+    <Content Include="Pojazdy\opel_2.jpg" />
+    <Content Include="Pojazdy\samochod.jpg" />
+    <Content Include="Pojazdy\samochodzik.jpg" />
+    <Content Include="Pojazdy\smart.jpg" />
+    <Content Include="Pojazdy\smart2.jpg" />
+    <Content Include="Pojazdy\sprinter.jpg" />
+    <Content Include="Pojazdy\sprinter_2.jpg" />
+    <Content Include="Pojazdy\yamaha r1_2.jpg" />
+    <Content Include="Pojazdy\yamaha.jpg" />
+    <Content Include="Pojazdy\yamaha_r1_3.jpg" />
     <Content Include="Rozne.aspx" />
     <Content Include="Scripts\jquery-1.4.1-vsdoc.js" />
     <Content Include="Scripts\jquery-1.4.1.js" />
@@ -169,13 +188,18 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="Agregaty\" />
+    <None Include="Pojazdy\Thumbs.db" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="MasterPage.Master" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="Web.sitemap" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="MaterialyBudowlane\" />
+    <Folder Include="Odziez\" />
+    <Folder Include="Rozne\" />
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
   <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v10.0\WebApplications\Microsoft.WebApplication.targets" />
