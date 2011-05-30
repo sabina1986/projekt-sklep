@@ -23,7 +23,6 @@
         }
         .style3
         {
-            font-family: "Arial Black";
             font-size: xx-large;
             color: #0066FF;
         }
@@ -40,21 +39,21 @@
 
     
         <div id="header" style="width: 100%;">
-            <div id="title" 
-                style="background-image: url('../Wyglad/baner1.jpg'); height: 156px;" />
-              
+         <hr style=" height : 4;  color: Blue;" />
+            <div id="title" style="background-image: url('../Wyglad/baner12.jpg'); height: 156px;" />
+         
             <div id="logindisplay">
                 
             </div> 
          </div>   
-
+         <hr style=" height : 4;  color: Blue;" /> 
     <div id="page" style="display:inline-table; height: 75%; width: 100%;">
 
             
 
-            <div id="menucontainer" style="float: left; width: 24%; height: 75%;">
+            <div id="menucontainer" style="float: left; width: 24%; height: 75%; background-color: #282619; color:  #33CCFF;">
             
-                <asp:SiteMapPath ID="SiteMapPath1" runat="server" Font-Names="Verdana" 
+                <asp:SiteMapPath ID="SiteMapPath1" runat="server" Font-Names="Georgia" 
                     Font-Size="0.8em" PathSeparator=" : " >
                     <CurrentNodeStyle ForeColor="#333333" />
                     <NodeStyle Font-Bold="True" ForeColor="#990000" />

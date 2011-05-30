@@ -1,16 +1,16 @@
 ﻿body 
 {
-    background-color: Green;
-    background-image: url(./215.jpg);
+    background-color: #282619;
+    color:  #CCFFFF;
     font-family: Georgia;
 }
 
 a:visited, a:link
 {
-    color: Blue;    
+    color: White;    
 }
         
 a:active, a:hover
 {
-    color: Black;    
+    color: Blue;    
 }
