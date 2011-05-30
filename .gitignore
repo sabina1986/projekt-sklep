@@ -3,6 +3,9 @@
 *.LDF
 *.cache
 *.suo
-*.stackdump     
-Kopera/bin    # ignoruj wszystkie pliki w katalogu build/
-Kopera/obj
+*.stackdump
+Kopera/bin/    
+Kopera/App_Data/
+*.dll
+*.pdb  
+Kopera/obj/

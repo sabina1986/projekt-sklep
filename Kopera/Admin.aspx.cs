@@ -46,8 +46,12 @@ namespace Kopera
             if (kategoria != null)
             {
                 //string connectionString = "Data Source='KACZMARZ-EB27C1\\SQLEXPRESS';Integrated Security=True;Pooling=False;Initial Catalog='Kopera'";
+<<<<<<< HEAD
                 string connectionString = "Data Source=.\\SQLEXPRESS;AttachDbFilename=|DataDirectory|\\Kopera.mdf;Integrated Security=True;User Instance=True";
+=======
+>>>>>>> 5a5477558c0f2394350183415e4f321f3258e40e
                 //SqlConnection objSqlCon = new SqlConnection(ConfigurationManager.ConnectionStrings["ConnectionString"].ConnectionString);
+                string connectionString="Data Source=.\\SQLEXPRESS;AttachDbFilename=|DataDirectory|\\Kopera.mdf;Integrated Security=True;User Instance=True";
                 SqlConnection conn = new SqlConnection(connectionString);
                 conn.Open();
 
@@ -83,7 +87,8 @@ namespace Kopera
 
         protected void ButtonDodajZdjecie_Click(object sender, EventArgs e)
         {
-            string connectionString = "Data Source='KACZMARZ-EB27C1\\SQLEXPRESS'; Integrated Security=True; Pooling=False; Initial Catalog='Kopera';";
+            //string connectionString = "Data Source='KACZMARZ-EB27C1\\SQLEXPRESS'; Integrated Security=True; Pooling=False; Initial Catalog='Kopera';";
+            string connectionString = "Data Source=.\\SQLEXPRESS;AttachDbFilename=|DataDirectory|\\Kopera.mdf;Integrated Security=True;User Instance=True";
             SqlConnection conn = new SqlConnection(connectionString);
             conn.Open();
 
@@ -117,7 +122,8 @@ namespace Kopera
             else
             {
                 labelKategoria.Text = "";
-                string connectionString = "Data Source='KACZMARZ-EB27C1\\SQLEXPRESS'; Integrated Security=True; Pooling=False; Initial Catalog='Kopera'";
+                //string connectionString = "Data Source='KACZMARZ-EB27C1\\SQLEXPRESS'; Integrated Security=True; Pooling=False; Initial Catalog='Kopera'";
+                string connectionString = "Data Source=.\\SQLEXPRESS;AttachDbFilename=|DataDirectory|\\Kopera.mdf;Integrated Security=True;User Instance=True";
                 SqlConnection conn = new SqlConnection(connectionString);
                 conn.Open();
                 string Kategoria = ListBoxKategoriaDodaj.SelectedItem.Text;
@@ -166,7 +172,8 @@ namespace Kopera
             string id = id_t.Text;
             string id_foto = foto_t.Text;
 
-            string connectionString = "Data Source='KACZMARZ-EB27C1\\SQLEXPRESS'; Integrated Security=True; Pooling=False; Initial Catalog='Kopera'";
+            //string connectionString = "Data Source='KACZMARZ-EB27C1\\SQLEXPRESS'; Integrated Security=True; Pooling=False; Initial Catalog='Kopera'";
+            string connectionString = "Data Source=.\\SQLEXPRESS;AttachDbFilename=|DataDirectory|\\Kopera.mdf;Integrated Security=True;User Instance=True";
             SqlConnection conn = new SqlConnection(connectionString);
             conn.Open();
             string Kategoria = ListBoxKategoriaUsun.SelectedItem.Text;

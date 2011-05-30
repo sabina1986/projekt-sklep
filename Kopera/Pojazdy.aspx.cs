@@ -14,7 +14,9 @@ namespace Kopera
     public partial class Pojazdy : System.Web.UI.Page
     {
         //public string connectionString="Data Source='KACZMARZ-EB27C1\\SQLEXPRESS';Integrated Security=True;Pooling=False;Initial Catalog='Kopera'";
-        public string connectionString = "Data Source=.\\SQLEXPRESS;AttachDbFilename=|DataDirectory|\\Kopera.mdf;Integrated Security=True;User Instance=True";
+
+        public string connectionString="Data Source=.\\SQLEXPRESS;AttachDbFilename=|DataDirectory|\\Kopera.mdf;Integrated Security=True;User Instance=True";
+
         public static DataTable dt;
         protected void Page_Load(object sender, EventArgs e)
         {
@@ -53,7 +55,13 @@ namespace Kopera
                     image = new Image();
                     image.ID = "image" + i + "" + j;
 
-                    string sciezka = Server.MapPath("~/Pojazdy/" + nameFile[j]);
+                    //wersja firefoxa
+                    //string name = nameFile[j];
+                    //string nameExt = name.Substring(0, name.Length - 4) + ".JPEG";
+                    //string sciezka = Server.MapPath("~/Pojazdy/" + nameExt);
+                    //koniec wersji firefox
+                    //string sciezka = Server.MapPath("~/Pojazdy/" + nameFile[j]);
+                    string sciezka = Server.MapPath("~\\Pojazdy\\" + nameFile[j]);
 
                     FileInfo file = new FileInfo(sciezka);
                     if (file.Exists)
@@ -66,15 +74,30 @@ namespace Kopera
                         image.AlternateText = "cos zezarlo obraz";
                     }
 
-                    PanelPojazdy.Controls.Add(new LiteralControl("<br/><br/>"));
+                    image.Width = 395;
+                    image.Height = 350;
+                    if (j % 2 == 0)
+                    {
+                        PanelPojazdy.Controls.Add(new LiteralControl("<br/><br/>"));
+                        
+                    }
                     PanelPojazdy.Controls.Add(image);
-                    PanelPojazdy.Controls.Add(new LiteralControl("<br/><br/>"));
+                    PanelPojazdy.Controls.Add(new LiteralControl("&nbsp;&nbsp;&nbsp;&nbsp;"));
+                    
                 }
                 PanelPojazdy.Controls.Add(new LiteralControl("<br/><br/>"));
-                PanelPojazdy.Controls.Add(new LiteralControl("<br/><br/>"));
+                PanelPojazdy.Controls.Add(new LiteralControl("<table border=\"1\" width=\"98%\">"));
+                PanelPojazdy.Controls.Add(new LiteralControl("<tr>"));
+                PanelPojazdy.Controls.Add(new LiteralControl("<td>"));
                 PanelPojazdy.Controls.Add(labelOpis);
-                PanelPojazdy.Controls.Add(new LiteralControl("<br/><br/>"));
+                PanelPojazdy.Controls.Add(new LiteralControl("</td>"));
+                PanelPojazdy.Controls.Add(new LiteralControl("</tr>"));
+                PanelPojazdy.Controls.Add(new LiteralControl("<tr>"));
+                PanelPojazdy.Controls.Add(new LiteralControl("<td>"));
                 PanelPojazdy.Controls.Add(labelCena);
+                PanelPojazdy.Controls.Add(new LiteralControl("</td>"));
+                PanelPojazdy.Controls.Add(new LiteralControl("</tr>"));
+                PanelPojazdy.Controls.Add(new LiteralControl("</table>"));
                 PanelPojazdy.Controls.Add(new LiteralControl("<br/><br/>"));
                 PanelPojazdy.Controls.Add(new LiteralControl("<br/><br/>"));
             }

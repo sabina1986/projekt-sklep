@@ -67,9 +67,15 @@ namespace Kopera
                         image.AlternateText = "cos zezarlo obraz";
                     }
 
-                    PanelAgregaty.Controls.Add(new LiteralControl("<br/><br/>"));
+                    image.Width = 375;
+                    image.Height = 325;
+                    if (j % 2 == 0)
+                    {
+                        PanelAgregaty.Controls.Add(new LiteralControl("<br/><br/>"));
+
+                    }
                     PanelAgregaty.Controls.Add(image);
-                    PanelAgregaty.Controls.Add(new LiteralControl("<br/><br/>"));
+                    PanelAgregaty.Controls.Add(new LiteralControl("&nbsp;&nbsp;&nbsp;&nbsp;"));
                 }
                 PanelAgregaty.Controls.Add(new LiteralControl("<br/><br/>"));
                 PanelAgregaty.Controls.Add(new LiteralControl("<br/><br/>"));
