@@ -40,6 +40,30 @@
 
         });
 		</script>
+        <!-- skrtpcik do powiekszania zdjec 
+        <script type="text/javascript">
+
+            function wielkosc(typ, zdjecie) {
+
+                if (typ == 1) {
+                    zdjecie.width = "600";
+                    zdjecie.height = "500";
+                    zdjecie.onclick = 'wielkosc(0, this)';
+                    zdjecie.id = 'aa';
+                    document.getElementById("bb").width = "300";
+                    document.getElementById("bb").height = "210";
+                    zdjecie.id = 'bb';
+                }
+                else {
+                    zdjecie.width = "300";
+                    zdjecie.height = "210";
+                    zdjecie.onclick = 'wielkosc(1, this)';
+                } 
+            }
+        </script> 
+        przykladowe wywolanie
+        <img src="zdjecie2.jpg" id="bb" width="300" height="210" onclick="wielkosc(1, this)" style ="cursor:hand">
+        -->
     <style type="text/css">
         p { padding-left: 30px;}
 			/*demo page css*/
@@ -114,8 +138,8 @@
                 <br />
                 <asp:Button ID="Button1" runat="server" onclick="ButtonAdmin_Click" 
                     Text="Admin" />
-               
-                 <a href="#" id="dialog_link" class="ui-state-default ui-corner-all"><span class="ui-icon ui-icon-newwin"></span>Autorzy</a>
+                <br />
+                <a href="#" id="dialog_link" class="ui-state-default ui-corner-all"><span class="ui-icon ui-icon-newwin"></span>Autorzy</a>
             </div>
           
         <div id="main" style="float: right; width: 74%; height: 75%">
