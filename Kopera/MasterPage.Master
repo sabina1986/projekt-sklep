@@ -64,6 +64,9 @@
         przykladowe wywolanie
         <img src="zdjecie2.jpg" id="bb" width="300" height="210" onclick="wielkosc(1, this)" style ="cursor:hand">
         -->
+
+
+
     <style type="text/css">
         p { padding-left: 30px;}
 			/*demo page css*/
@@ -113,10 +116,33 @@
          </div>   
          <hr style="height : 4;  color: Blue;" /> 
          <div id="zegarek" style="float: right; color: White; font-size:smaller;"> 
-                    <script type="text/javascript">
+                           <script type="text/javascript"> <!--
+                               function GetDay(intDay) {
+                                   var DayArray = new Array("Niedziela", "Poniedziałek", "Wtorek", "Środa", "Czwartek", "Piątek", "Sobota");
+                                   return DayArray[intDay];
+                               }
+
+                               function GetMonth(intMonth) {
+                                   var MonthArray = new Array("styczeń", "luty", "marzec", "kwieceń", "maj", "czerwiec", "lipiec", "sierpień", "wrzesień", "październik", "listpod", "grudzień");
+                                   return MonthArray[intMonth];
+                               }
+                               function getDateStrWithDOW() {
+                                   var today = new Date();
+                                   var year = today.getYear();
+                                   if (year < 1000) year += 1900
+                                   var todayStr = GetDay(today.getDay()) + ", ";
+                                   todayStr += today.getDate() + " " + GetMonth(today.getMonth());
+                                   todayStr += ", " + year + " r.";
+                                   return todayStr;
+                               }
+                               document.write("<strong>" + getDateStrWithDOW() + "</strong>");
+//-->
+</script>
+         <!-- zegarek po angielsku -->          
+                   <!-- <script type="text/javascript">
                      var curDateTime = new Date();
                      document.write(curDateTime.toLocaleString());
-                    </script>
+                    </script> -->
          </div>
 
     <div id="page" style="display:inline-table; height: 75%; width: 100%;">
