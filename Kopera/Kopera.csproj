@@ -94,6 +94,7 @@
     <Content Include="Scripts\jquery-1.4.1.js" />
     <Content Include="Scripts\jquery-1.4.1.min.js" />
     <Content Include="Odziez.aspx" />
+    <Content Include="Scripts\jquery-1.4.3.min.js" />
     <Content Include="Scripts\jquery-1.5.1.min.js" />
     <Content Include="Scripts\jquery-ui-1.8.13.custom.min.js" />
     <Content Include="Scripts\jquery.js" />
