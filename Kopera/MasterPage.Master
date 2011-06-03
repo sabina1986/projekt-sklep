@@ -111,7 +111,14 @@
                 
             </div> 
          </div>   
-         <hr style=" height : 4;  color: Blue;" /> 
+         <hr style="height : 4;  color: Blue;" /> 
+         <div id="zegarek" style="float: right; color: White; font-size:smaller;"> 
+                    <script type="text/javascript">
+                     var curDateTime = new Date();
+                     document.write(curDateTime.toLocaleString());
+                    </script>
+         </div>
+
     <div id="page" style="display:inline-table; height: 75%; width: 100%;">
 
             
@@ -162,9 +169,14 @@
             <br />
 		    </div>
 
-</form>
+            <div id = "Banner1">
+            <input size="50" name="Bar"value="" />
+            </div>
+            <script type="text/javascript">Banner();</script>
 
-        
+            </form>
+
+
 
 </body>
 </html>
