@@ -64,7 +64,26 @@
         przykladowe wywolanie
         <img src="zdjecie2.jpg" id="bb" width="300" height="210" onclick="wielkosc(1, this)" style ="cursor:hand">
         -->
+        <script type='text/javascript'> <!--
+            function clock() {
+                var date = new Date();
+                var hour = date.getHours();
+                var minute = date.getMinutes();
+                var second = date.getSeconds();
 
+
+                if (minute < 10)
+                    minute = "0" + minute;
+
+                if (second < 10)
+                    second = "0" + second;
+
+                //document.title = hour + ":" + minute + ":" + second;
+                document.getElementById("godz").value = hour + ":" + minute + ":" + second;
+                setTimeout("clock()", 1000)
+            }
+//-->
+</script>
 
 
     <style type="text/css">
@@ -102,10 +121,9 @@
         
     </style>
 </head>
-<body>
+<body onload="clock()">
     <form id="form2" runat="server">
-
-    
+       
         <div id="header" style="width: 100%;">
          <hr style=" height : 4;  color: Blue;" />
             <div id="title" style="background-image: url('../Wyglad/baner12.jpg'); height: 156px;" />
@@ -115,7 +133,7 @@
             </div> 
          </div>   
          <hr style="height : 4;  color: Blue;" /> 
-         <div id="zegarek" style="float: right; color: White; font-size:smaller;"> 
+         <div id="data" style="float: right; color: White; font-size:smaller;"> 
                            <script type="text/javascript"> <!--
                                function GetDay(intDay) {
                                    var DayArray = new Array("Niedziela", "Poniedziałek", "Wtorek", "Środa", "Czwartek", "Piątek", "Sobota");
@@ -126,9 +144,11 @@
                                    var MonthArray = new Array("styczeń", "luty", "marzec", "kwieceń", "maj", "czerwiec", "lipiec", "sierpień", "wrzesień", "październik", "listpod", "grudzień");
                                    return MonthArray[intMonth];
                                }
+                               
                                function getDateStrWithDOW() {
                                    var today = new Date();
                                    var year = today.getYear();
+                                  
                                    if (year < 1000) year += 1900
                                    var todayStr = GetDay(today.getDay()) + ", ";
                                    todayStr += today.getDate() + " " + GetMonth(today.getMonth());
@@ -138,13 +158,17 @@
                                document.write("<strong>" + getDateStrWithDOW() + "</strong>");
 //-->
 </script>
+<br />
+<strong>Aktualna godzina : </strong>
+<input type="text" id="godz" name="face" size="11" value="" style="text-align: center;"/>
          <!-- zegarek po angielsku -->          
                    <!-- <script type="text/javascript">
                      var curDateTime = new Date();
                      document.write(curDateTime.toLocaleString());
                     </script> -->
          </div>
-
+         <br /><br />
+<hr style="height : 4;  color: Blue;" /> 
     <div id="page" style="display:inline-table; height: 75%; width: 100%;">
 
             
@@ -195,10 +219,6 @@
             <br />
 		    </div>
 
-            <div id = "Banner1">
-            <input size="50" name="Bar"value="" />
-            </div>
-            <script type="text/javascript">Banner();</script>
 
             </form>
 
