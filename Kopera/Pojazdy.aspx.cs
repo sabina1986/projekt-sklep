@@ -27,6 +27,47 @@ namespace Kopera
 
         private void DodajKontrolki()
         {
+            PanelPojazdy.Controls.Add(new LiteralControl("<head>"));
+
+            PanelPojazdy.Controls.Add(new LiteralControl("<script type=\"text/javascript\" src=\"http://ajax.googleapis.com/ajax/libs/jquery/1.4/jquery.min.js\"></script>"
+                +"<script>!window.jQuery && document.write('<script src=\"Scripts/jquery.fancybox-1.3.4/jquery-1.4.3.min.js\"></script>');</script>"+
+                "<script type=\"text/javascript\" src=\"Scripts/jquery.fancybox-1.3.4/fancybox/jquery.mousewheel-3.0.4.pack.js\"></script>" +
+                "<script type=\"text/javascript\" src=\"Scripts/jquery.fancybox-1.3.4/fancybox/jquery.fancybox-1.3.4.pack.js\"></script>" +
+                "<link rel=\"stylesheet\" type=\"text/css\" href=\"Scripts/jquery.fancybox-1.3.4/fancybox/jquery.fancybox-1.3.4.css\" media=\"screen\" />" +
+                "<link rel=\"stylesheet\" href=\"Scripts/jquery.fancybox-1.3.4/style.css\" />"));
+
+            PanelPojazdy.Controls.Add(new LiteralControl("<script type=\"text/javascript\">" +
+            "$(document).ready(function() {" +
+
+            "$(\"a#example1\").fancybox();" +
+
+            "$(\"a#example2\").fancybox({" +
+            "	'overlayShow'	: false," +
+            "	'transitionIn'	: 'elastic'," +
+            "	'transitionOut'	: 'elastic'" +
+            "});"+
+            "$(\"a[rel=example_group]\").fancybox({"+
+			"	'transitionIn'		: 'none',"+
+			"	'transitionOut'		: 'none',"+
+			"	'titlePosition' 	: 'over',"+
+			"	'titleFormat'		: function(title, currentArray, currentIndex, currentOpts) {"+
+			"		return '<span id=\"fancybox-title-over\">Image ' + (currentIndex + 1) + ' / ' + currentArray.length + (title.length ? ' &nbsp; ' + title : '') + '</span>';"+
+			"	}"+
+			"});"+
+            "</script>"));
+
+            PanelPojazdy.Controls.Add(new LiteralControl("</head><body>"));
+      
+      PanelPojazdy.Controls.Add(new LiteralControl("<div id=\"content\">"+
+	"<p> Different animations<br />"+
+
+		"<a id=\"example1\" href=\"Scripts/jquery.fancybox-1.3.4/example/1_b.jpg\"><img alt=\"example1\" src=\"Scripts/jquery.fancybox-1.3.4/example/1_s.jpg\" /></a>"+
+        "<a id=\"example2\" href=\"Scripts/jquery.fancybox-1.3.4/example/2_b.jpg\"><img alt=\"example2\" src=\"Scripts/jquery.fancybox-1.3.4/example/2_s.jpg\" /></a>"+
+        "<a id=\"example3\" href=\"Scripts/jquery.fancybox-1.3.4/example/3_b.jpg\"><img alt=\"example3\" src=\"Scripts/jquery.fancybox-1.3.4/example/3_s.jpg\" /></a>"+
+        "<a id=\"example4\" href=\"Scripts/jquery.fancybox-1.3.4/example/4_b.jpg\"><img class=\"last\" alt=\"example4\" src=\"Scripts/jquery.fancybox-1.3.4/example/4_s.jpg\" /></a>"+
+     "</p>"));
+
+
             Label labelOpis;
             Label labelCena;
             Image image;
