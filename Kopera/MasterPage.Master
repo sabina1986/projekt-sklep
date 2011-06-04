@@ -51,7 +51,7 @@
 
         });
 		</script>
-        <!-- skrtpcik do powiekszania zdjec 
+        <!-- skrtpcik do powiekszania zdjec ktory potrzebuje i miniaturki i duzego zdjecia
         <script type="text/javascript">
 
             function wielkosc(typ, zdjecie) {
