@@ -9,7 +9,105 @@
     <title></title>
     <asp:ContentPlaceHolder ID="head" runat="server">
     </asp:ContentPlaceHolder>
+    <script src="Scripts/jquery-1.4.3.min.js" type="text/javascript"></script>
+    <script src="Scripts/jquery-1.5.1.min.js" type="text/javascript"></script>
+    <script src="Scripts/jquery-ui-1.8.13.custom.min.js" type="text/javascript"></script>
+    <script type="text/javascript">
+        function drukuj() {
+            // sprawdź możliwości przeglądarki
+            if (!window.print) {
+                alert("Twoja przeglądarka nie drukuje!")
+                return 0;
+            }
+            window.print(); // jeśli wszystko ok drukuj
+        }
+    </script>
+    <script type="text/javascript">
+        $(function () {
+            // Dialog			
+            $('#dialog').dialog({
+                autoOpen: false,
+                width: 600,
+                buttons: {
+                    "OK": function () {
+                        $(this).dialog("close");
+                    },
+                    "Cancel": function () {
+                        $(this).dialog("close");
+                    }
+                }
+            });
+
+            // Dialog Link
+            $('#dialog_link').click(function () {
+                $('#dialog').dialog('open');
+                return false;
+            });
+            //hover states on the static widgets
+            $('#dialog_link, ul#icons li').hover(
+					function () { $(this).addClass('ui-state-hover'); },
+					function () { $(this).removeClass('ui-state-hover'); }
+				);
+
+        });
+		</script>
+        <!-- skrtpcik do powiekszania zdjec 
+        <script type="text/javascript">
+
+            function wielkosc(typ, zdjecie) {
+
+                if (typ == 1) {
+                    zdjecie.width = "600";
+                    zdjecie.height = "500";
+                    zdjecie.onclick = 'wielkosc(0, this)';
+                    zdjecie.id = 'aa';
+                    document.getElementById("bb").width = "300";
+                    document.getElementById("bb").height = "210";
+                    zdjecie.id = 'bb';
+                }
+                else {
+                    zdjecie.width = "300";
+                    zdjecie.height = "210";
+                    zdjecie.onclick = 'wielkosc(1, this)';
+                } 
+            }
+        </script> 
+        przykladowe wywolanie
+        <img src="zdjecie2.jpg" id="bb" width="300" height="210" onclick="wielkosc(1, this)" style ="cursor:hand">
+        -->
+        <script type='text/javascript'> <!--
+            function clock() {
+                var date = new Date();
+                var hour = date.getHours();
+                var minute = date.getMinutes();
+                var second = date.getSeconds();
+
+
+                if (minute < 10)
+                    minute = "0" + minute;
+
+                if (second < 10)
+                    second = "0" + second;
+
+                //document.title = hour + ":" + minute + ":" + second;
+                document.getElementById("godz").value = hour + ":" + minute + ":" + second;
+                setTimeout("clock()", 1000)
+            }
+//-->
+</script>
+
+
     <style type="text/css">
+        p { padding-left: 30px;}
+			/*demo page css*/
+			/*body{ font: 62.5% "Trebuchet MS", sans-serif; margin: 50px;}**/
+			#dialog {border: solid; border-color: #146ABD; background-color: #ADFFFF;}
+			.demoHeaders { margin-top: 2em; }
+			#dialog_link {padding: .4em 1em .4em 20px;text-decoration: none;position: relative;}
+			#dialog_link span.ui-icon {margin: 0 5px 0 0;position: absolute;left: .2em;top: 50%;margin-top: -8px;}
+			ul#icons {margin: 0; padding: 0;}
+			ul#icons li {margin: 2px; position: relative; padding: 4px 0; cursor: pointer; float: left;  list-style: none;}
+			ul#icons span.ui-icon {float: left; margin: 0 4px;}
         .style1
         {
             width: 100%;
@@ -23,7 +121,6 @@
         }
         .style3
         {
-            font-family: "Arial Black";
             font-size: xx-large;
             color: #0066FF;
         }
@@ -35,26 +132,61 @@
         
     </style>
 </head>
-<body>
+<body onload="clock()">
     <form id="form2" runat="server">
-
-    
+       
         <div id="header" style="width: 100%;">
-            <div id="title" 
-                style="background-image: url('../Wyglad/baner1.jpg'); height: 156px;" />
-              
+         <hr style=" height : 4;  color: Blue;" />
+            <div id="title" style="background-image: url('../Wyglad/baner12.jpg'); height: 156px;" />
+         
             <div id="logindisplay">
                 
             </div> 
          </div>   
+         <hr style="height : 4;  color: Blue;" /> 
+         <div id="data" style="float: right; color: White; font-size:smaller;"> 
+                           <script type="text/javascript"> <!--
+                               function GetDay(intDay) {
+                                   var DayArray = new Array("Niedziela", "Poniedziałek", "Wtorek", "Środa", "Czwartek", "Piątek", "Sobota");
+                                   return DayArray[intDay];
+                               }
 
+                               function GetMonth(intMonth) {
+                                   var MonthArray = new Array("styczeń", "luty", "marzec", "kwieceń", "maj", "czerwiec", "lipiec", "sierpień", "wrzesień", "październik", "listpod", "grudzień");
+                                   return MonthArray[intMonth];
+                               }
+                               
+                               function getDateStrWithDOW() {
+                                   var today = new Date();
+                                   var year = today.getYear();
+                                  
+                                   if (year < 1000) year += 1900
+                                   var todayStr = GetDay(today.getDay()) + ", ";
+                                   todayStr += today.getDate() + " " + GetMonth(today.getMonth());
+                                   todayStr += ", " + year + " r.";
+                                   return todayStr;
+                               }
+                               document.write("<strong>" + getDateStrWithDOW() + "</strong>");
+//-->
+</script>
+<br />
+<strong>Aktualna godzina : </strong>
+<input type="text" id="godz" name="face" size="11" value="" style="text-align: center;"/>
+         <!-- zegarek po angielsku -->          
+                   <!-- <script type="text/javascript">
+                     var curDateTime = new Date();
+                     document.write(curDateTime.toLocaleString());
+                    </script> -->
+         </div>
+         <br /><br />
+<hr style="height : 4;  color: Blue;" /> 
     <div id="page" style="display:inline-table; height: 75%; width: 100%;">
 
             
 
-            <div id="menucontainer" style="float: left; width: 24%; height: 75%;">
+            <div id="menucontainer" style="float: left; width: 24%; height: 75%; background-color: #282619; color:  #33CCFF;">
             
-                <asp:SiteMapPath ID="SiteMapPath1" runat="server" Font-Names="Verdana" 
+                <asp:SiteMapPath ID="SiteMapPath1" runat="server" Font-Names="Georgia" 
                     Font-Size="0.8em" PathSeparator=" : " >
                     <CurrentNodeStyle ForeColor="#333333" />
                     <NodeStyle Font-Bold="True" ForeColor="#990000" />
@@ -70,11 +202,16 @@
                 </asp:TreeView>
                 <br />
                 <br />
-                Pasek nawigacji<br />
+                Pasek nawigacji :
                 <br />
+                <div id="nawigacja" style="position: relative;">
+                <a href="javascript:drukuj()" class="ui-state-default ui-corner-allc" style="text-decoration: none;">Drukuj stronę</a><br />
+                <a href="#" id="dialog_link" class="ui-state-default ui-corner-allc"><span class="ui-icon ui-icon-newwin"></span>Autorzy</a>
+                <br /><br />
                 <asp:Button ID="Button1" runat="server" onclick="ButtonAdmin_Click" 
                     Text="Admin" />
-  
+                <br />
+                </div>
             </div>
           
         <div id="main" style="float: right; width: 74%; height: 75%">
@@ -82,17 +219,25 @@
          <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
         
         </asp:ContentPlaceHolder>
-
+       
         </div> 
 </div>
             <div id="stopka" style="width: 100%; height:auto;">
             <StopkaFV:stopka ID="stopka2" runat="server" />
             </div>       
-    
 
-</form>
+            <div id="dialog" style="text-align: center; color: #146ABD;">
+            <br />
+			<h3>
+            Autorzy :<br />
+            Janusz Kaczmarzyk & Sabina Kowalczyk</h3>
+            <br />
+		    </div>
 
-        
+
+            </form>
+
+
 
 </body>
 </html>

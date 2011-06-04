@@ -20,13 +20,13 @@
         <div class="style5">
             <strong style="text-align: left">
             <br />
-            Witamy<br /> nasz firma zajmuje się sprzedaża<br /> maszyn prądotwórczych, 
+            Witamy<br /> nasz firma zajmuje się sprzedażą<br /> maszyn prądotwórczych, 
             pojazdów, opon,<br /> materiałów budowlanych oraz usług transportowych<br />
             <br />
             </strong>
         </div>
 
-        <div style="font-size: medium; font-family: 'Times New Roman', Times, serif">
+        <div style="font-size: medium;">
 
             Dane Kontaktowe:<br /> Paweł Kopera<br /> ul. Częstochowska 45<br /> 42-120 
             Miedźno<br /> tel: 601 886 563
