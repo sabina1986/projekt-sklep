@@ -1,6 +1,0 @@
-Czeœæ
-W pliku Baza Danych przesy³am plik z baz¹ danych.
-dodaj now¹ bazê danych do projektu ze swoje komputera o nazwie Kopera
-i podmnieñ w nim póxniej te plik co s¹ w Baza Danych.
-
-zmieñ te¿ connection string jak to wszytko sie pozmienia powiino dzia³aæ :)
