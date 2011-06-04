@@ -27,9 +27,9 @@ namespace Kopera
 
         private void DodajKontrolki()
         {
-            PanelPojazdy.Controls.Add(new LiteralControl("<head>"));
+            //PanelPojazdy.Controls.Add(new LiteralControl("<head>"));
 
-            PanelPojazdy.Controls.Add(new LiteralControl("<script type=\"text/javascript\" src=\"http://ajax.googleapis.com/ajax/libs/jquery/1.4/jquery.min.js\"></script>"
+            /*PanelPojazdy.Controls.Add(new LiteralControl("<script type=\"text/javascript\" src=\"http://ajax.googleapis.com/ajax/libs/jquery/1.4/jquery.min.js\"></script>"
                 +"<script>!window.jQuery && document.write('<script src=\"Scripts/jquery.fancybox-1.3.4/jquery-1.4.3.min.js\"></script>');</script>"+
                 "<script type=\"text/javascript\" src=\"Scripts/jquery.fancybox-1.3.4/fancybox/jquery.mousewheel-3.0.4.pack.js\"></script>" +
                 "<script type=\"text/javascript\" src=\"Scripts/jquery.fancybox-1.3.4/fancybox/jquery.fancybox-1.3.4.pack.js\"></script>" +
@@ -56,17 +56,41 @@ namespace Kopera
 			"});"+
             "</script>"));
 
-            PanelPojazdy.Controls.Add(new LiteralControl("</head><body>"));
+            //PanelPojazdy.Controls.Add(new LiteralControl("</head><body>"));
       
       PanelPojazdy.Controls.Add(new LiteralControl("<div id=\"content\">"+
 	"<p> Different animations<br />"+
 
 		"<a id=\"example1\" href=\"Scripts/jquery.fancybox-1.3.4/example/1_b.jpg\"><img alt=\"example1\" src=\"Scripts/jquery.fancybox-1.3.4/example/1_s.jpg\" /></a>"+
-        "<a id=\"example2\" href=\"Scripts/jquery.fancybox-1.3.4/example/2_b.jpg\"><img alt=\"example2\" src=\"Scripts/jquery.fancybox-1.3.4/example/2_s.jpg\" /></a>"+
-        "<a id=\"example3\" href=\"Scripts/jquery.fancybox-1.3.4/example/3_b.jpg\"><img alt=\"example3\" src=\"Scripts/jquery.fancybox-1.3.4/example/3_s.jpg\" /></a>"+
-        "<a id=\"example4\" href=\"Scripts/jquery.fancybox-1.3.4/example/4_b.jpg\"><img class=\"last\" alt=\"example4\" src=\"Scripts/jquery.fancybox-1.3.4/example/4_s.jpg\" /></a>"+
-     "</p>"));
+        
+     "</p>"+
+     
+     "<p> Image gallery (ps, try using mouse scroll wheel)<br />"+
+	 "<a rel=\"example_group\" href=\"Scripts/jquery.fancybox-1.3.4/example/9_b.jpg\" title=\"Lorem ipsum dolor sit amet\"><img alt=\"\" src=\"Scripts/jquery.fancybox-1.3.4/example/9_s.jpg\" /></a>"+
+     "<a rel=\"example_group\" href=\"Scripts/jquery.fancybox-1.3.4/example/10_b.jpg\" title=\"\"><img alt=\"\" src=\"Scripts/jquery.fancybox-1.3.4/example/10_s.jpg\" /></a>"+
+	 "<a rel=\"example_group\" href=\"Scripts/jquery.fancybox-1.3.4/example/11_b.jpg\" title=\"\"><img alt=\"\" src=\"Scripts/jquery.fancybox-1.3.4/example/11_s.jpg\" /></a>"+
+	 "<a rel=\"example_group\" href=\"Scripts/jquery.fancybox-1.3.4/example/12_b.jpg\" title=\"\"><img class=\"last\" alt=\"\" src=\"Scripts/jquery.fancybox-1.3.4/example/12_s.jpg\" /></a>"+
+	"</p>"     
+     ));*/
 
+            PanelPojazdy.Controls.Add(new LiteralControl("<script type=\"text/javascript\">"+
+                "function wielkosc(typ, zdjecie) {"+
+                "if (typ == 1) {"+
+                    "zdjecie.width = \"600\";"+
+                    "zdjecie.height = \"500\";"+
+                    "zdjecie.onclick = 'wielkosc(0, this)';"+
+                    "zdjecie.id = 'aa';"+
+                    "document.getElementById(\"bb\").width = \"300\";"+
+                    "document.getElementById(\"bb\").height = \"210\";"+
+                    "zdjecie.id = 'bb';"+
+                "}"+
+                "else {"+
+                    "zdjecie.width = \"300\";"+
+                    "zdjecie.height = \"210\";"+
+                    "zdjecie.onclick = 'wielkosc(1, this)';"+
+                "}"+ 
+            "}"+
+        "</script>")); 
 
             Label labelOpis;
             Label labelCena;
@@ -109,6 +133,7 @@ namespace Kopera
                     {
                         image.ImageUrl = sciezka;
                         image.AlternateText = "cos zezarlo obraz";
+                        PanelPojazdy.Controls.Add( new LiteralControl("<img src=\"" + sciezka + "\" id=\"bb\" width=\"300\" height=\"210\" onclick=\"wielkosc(1, this)\" style =\"cursor:hand\">"));
                     }
                     else
                     {
@@ -122,6 +147,7 @@ namespace Kopera
                         PanelPojazdy.Controls.Add(new LiteralControl("<br/><br/>"));
                         
                     }
+                    
                     PanelPojazdy.Controls.Add(image);
                     PanelPojazdy.Controls.Add(new LiteralControl("&nbsp;&nbsp;&nbsp;&nbsp;"));
                     
