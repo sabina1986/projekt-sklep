@@ -27,7 +27,7 @@ namespace Kopera
         {
             Label labelOpis;
             Label labelCena;
-            Image image;
+            //Image image;
 
 
 
@@ -48,28 +48,59 @@ namespace Kopera
 
                 List<string> nameFile = LoadNameFotoRozne((string)table[3]);
 
+                PanelRozne.Controls.Add(new LiteralControl(
+               "<center><div id=\"Rozne" + i + "\">" +
+               "<p>"
+               ));
+
+
                 for (int j = 0; j < nameFile.Count; ++j)
                 {
-                    image = new Image();
-                    image.ID = "image" + i + "" + j;
+                    //image = new Image();
+                    //image.ID = "image" + i + "" + j;
 
                     string sciezka = Server.MapPath("~/Rozne/" + nameFile[j]);
 
                     FileInfo file = new FileInfo(sciezka);
                     if (file.Exists)
                     {
-                        image.ImageUrl = sciezka;
-                        image.AlternateText = "cos zezarlo obraz";
+                        //image.ImageUrl = sciezka;
+                        //image.AlternateText = "cos zezarlo obraz";
+                        PanelRozne.Controls.Add(new LiteralControl(
+                       "<a rel=\"example_group\" href=" + sciezka + " title=\"Exit (click on thema)\"><img alt=\"\" src=" + sciezka + " width=\"150\" height=\"150\"/></a>"
+                       ));
                     }
                     else
                     {
-                        image.AlternateText = "cos zezarlo obraz";
+                        //image.AlternateText = "cos zezarlo obraz";
                     }
 
-                    PanelRozne.Controls.Add(new LiteralControl("<br/><br/>"));
-                    PanelRozne.Controls.Add(image);
-                    PanelRozne.Controls.Add(new LiteralControl("<br/><br/>"));
+                    //PanelRozne.Controls.Add(new LiteralControl("<br/><br/>"));
+                    //PanelRozne.Controls.Add(image);
+                    //PanelRozne.Controls.Add(new LiteralControl("<br/><br/>"));
                 }
+                PanelRozne.Controls.Add(new LiteralControl("</p></div></center><br/>"));
+
+                PanelRozne.Controls.Add(new LiteralControl("<table>"));
+                PanelRozne.Controls.Add(new LiteralControl("<tr>"));
+                PanelRozne.Controls.Add(new LiteralControl("<td>Opis: "));
+                PanelRozne.Controls.Add(new LiteralControl("</td>"));
+                PanelRozne.Controls.Add(new LiteralControl("<td> "));
+                PanelRozne.Controls.Add(labelOpis);
+                PanelRozne.Controls.Add(new LiteralControl("</td>"));
+                PanelRozne.Controls.Add(new LiteralControl("</tr>"));
+                PanelRozne.Controls.Add(new LiteralControl("<tr>"));
+                PanelRozne.Controls.Add(new LiteralControl("<td>Cena: "));
+                PanelRozne.Controls.Add(new LiteralControl("</td>"));
+                PanelRozne.Controls.Add(new LiteralControl("<td>"));
+                PanelRozne.Controls.Add(labelCena);
+                PanelRozne.Controls.Add(new LiteralControl("</td>"));
+                PanelRozne.Controls.Add(new LiteralControl("</tr>"));
+                PanelRozne.Controls.Add(new LiteralControl("</table>"));
+                PanelRozne.Controls.Add(new LiteralControl("</table>"));
+                PanelRozne.Controls.Add(new LiteralControl("<br/><br/>"));
+                PanelRozne.Controls.Add(new LiteralControl("<br/><br/>"));
+
                 PanelRozne.Controls.Add(new LiteralControl("<br/><br/>"));
                 PanelRozne.Controls.Add(new LiteralControl("<br/><br/>"));
                 PanelRozne.Controls.Add(labelOpis);

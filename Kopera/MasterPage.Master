@@ -169,28 +169,7 @@
 			ul#icons {margin: 0; padding: 0;}
 			ul#icons li {margin: 2px; position: relative; padding: 4px 0; cursor: pointer; float: left;  list-style: none;}
 			ul#icons span.ui-icon {float: left; margin: 0 4px;}
-        .style1
-        {
-            width: 100%;
-            border: "3";
-           
-        }
-        .style2
-        {
-            width: 25%;
-            height: 75%;
-        }
-        .style3
-        {
-            font-size: xx-large;
-            color: #0066FF;
-        }
-        .style4
-        {
-            width: 75%;
-            height: 75%;
-        }
-        
+                
     </style>
 </head>
 <body onload="clock()">
@@ -267,10 +246,9 @@
                 <br />
                 <div id="nawigacja" style="position: relative;">
                 <a href="javascript:drukuj()" class="ui-state-default ui-corner-allc" style="text-decoration: none;">Drukuj stronę</a><br />
-                <a href="#" id="dialog_link" class="ui-state-default ui-corner-allc"><span class="ui-icon ui-icon-newwin"></span>Autorzy</a>
+                <a href="#" id="dialog_link" class="ui-state-default ui-corner-allc"><span class="ui-icon ui-icon-newwin"></span>Autorzy</a><br />
+                <a href="Logowanie.aspx" style="text-decoration: none;" >Administracja</a>
                 <br /><br />
-                <asp:Button ID="Button1" runat="server" onclick="ButtonAdmin_Click" 
-                    Text="Admin" />
                 <br />
                 </div>
             </div>

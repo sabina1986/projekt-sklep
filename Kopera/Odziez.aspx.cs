@@ -27,7 +27,7 @@ namespace Kopera
         {
             Label labelOpis;
             Label labelCena;
-            Image image;
+            //Image image;
 
 
 
@@ -48,35 +48,58 @@ namespace Kopera
 
                 List<string> nameFile = LoadNameFotoOdziez((string)table[3]);
 
+                PanelOdziez.Controls.Add(new LiteralControl(
+               "<center><div id=\"Odziez" + i + "\">" +
+               "<p>"
+               ));
+
                 for (int j = 0; j < nameFile.Count; ++j)
                 {
-                    image = new Image();
-                    image.ID = "image" + i + "" + j;
+                    //image = new Image();
+                    //image.ID = "image" + i + "" + j;
 
                     string sciezka = Server.MapPath("~/Odziez/" + nameFile[j]);
 
                     FileInfo file = new FileInfo(sciezka);
                     if (file.Exists)
                     {
-                        image.ImageUrl = sciezka;
-                        image.AlternateText = "cos zezarlo obraz";
+                        //image.ImageUrl = sciezka;
+                        //image.AlternateText = "cos zezarlo obraz";
+                        PanelOdziez.Controls.Add(new LiteralControl(
+                        "<a rel=\"example_group\" href=" + sciezka + " title=\"Exit (click on thema)\"><img alt=\"\" src=" + sciezka + " width=\"150\" height=\"150\"/></a>"
+                        ));
                     }
                     else
                     {
-                        image.AlternateText = "cos zezarlo obraz";
+                        //image.AlternateText = "cos zezarlo obraz";
                     }
 
-                    PanelOdziez.Controls.Add(new LiteralControl("<br/><br/>"));
-                    PanelOdziez.Controls.Add(image);
-                    PanelOdziez.Controls.Add(new LiteralControl("<br/><br/>"));
+                    //PanelOdziez.Controls.Add(new LiteralControl("<br/><br/>"));
+                    //PanelOdziez.Controls.Add(image);
+                    //PanelOdziez.Controls.Add(new LiteralControl("<br/><br/>"));
                 }
-                PanelOdziez.Controls.Add(new LiteralControl("<br/><br/>"));
-                PanelOdziez.Controls.Add(new LiteralControl("<br/><br/>"));
+                PanelOdziez.Controls.Add(new LiteralControl("</p></div></center><br/>"));
+
+                PanelOdziez.Controls.Add(new LiteralControl("<table>"));
+                PanelOdziez.Controls.Add(new LiteralControl("<tr>"));
+                PanelOdziez.Controls.Add(new LiteralControl("<td>Opis: "));
+                PanelOdziez.Controls.Add(new LiteralControl("</td>"));
+                PanelOdziez.Controls.Add(new LiteralControl("<td> "));
                 PanelOdziez.Controls.Add(labelOpis);
-                PanelOdziez.Controls.Add(new LiteralControl("<br/><br/>"));
+                PanelOdziez.Controls.Add(new LiteralControl("</td>"));
+                PanelOdziez.Controls.Add(new LiteralControl("</tr>"));
+                PanelOdziez.Controls.Add(new LiteralControl("<tr>"));
+                PanelOdziez.Controls.Add(new LiteralControl("<td>Cena: "));
+                PanelOdziez.Controls.Add(new LiteralControl("</td>"));
+                PanelOdziez.Controls.Add(new LiteralControl("<td>"));
                 PanelOdziez.Controls.Add(labelCena);
+                PanelOdziez.Controls.Add(new LiteralControl("</td>"));
+                PanelOdziez.Controls.Add(new LiteralControl("</tr>"));
+                PanelOdziez.Controls.Add(new LiteralControl("</table>"));
+                PanelOdziez.Controls.Add(new LiteralControl("</table>"));
                 PanelOdziez.Controls.Add(new LiteralControl("<br/><br/>"));
                 PanelOdziez.Controls.Add(new LiteralControl("<br/><br/>"));
+              
             }
         }
 

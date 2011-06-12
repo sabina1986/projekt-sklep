@@ -27,7 +27,7 @@ namespace Kopera
         {
             Label labelOpis;
             Label labelCena;
-            Image image;
+            //Image image;
 
 
 
@@ -48,35 +48,60 @@ namespace Kopera
 
                 List<string> nameFile = LoadNameFotoOpony((string)table[3]);
 
+                PanelOpony.Controls.Add(new LiteralControl(
+               "<center><div id=\"Opony" + i + "\">" +
+               "<p>"
+               ));
+
                 for (int j = 0; j < nameFile.Count; ++j)
                 {
-                    image = new Image();
-                    image.ID = "image" + i + "" + j;
+                    //image = new Image();
+                    //image.ID = "image" + i + "" + j;
 
                     string sciezka = Server.MapPath("~/Opony/" + nameFile[j]);
 
                     FileInfo file = new FileInfo(sciezka);
                     if (file.Exists)
                     {
-                        image.ImageUrl = sciezka;
-                        image.AlternateText = "cos zezarlo obraz";
+                        //image.ImageUrl = sciezka;
+                        //image.AlternateText = "cos zezarlo obraz";
+                        PanelOpony.Controls.Add(new LiteralControl(
+                        "<a rel=\"example_group\" href=" + sciezka + " title=\"Exit (click on thema)\"><img alt=\"\" src=" + sciezka + " width=\"150\" height=\"150\"/></a>"
+                        ));
                     }
                     else
                     {
-                        image.AlternateText = "cos zezarlo obraz";
+                        //image.AlternateText = "cos zezarlo obraz";
                     }
 
-                    PanelOpony.Controls.Add(new LiteralControl("<br/><br/>"));
-                    PanelOpony.Controls.Add(image);
-                    PanelOpony.Controls.Add(new LiteralControl("<br/><br/>"));
+                    //PanelOpony.Controls.Add(new LiteralControl("<br/><br/>"));
+                    //PanelOpony.Controls.Add(image);
+                    //PanelOpony.Controls.Add(new LiteralControl("<br/><br/>"));
                 }
-                PanelOpony.Controls.Add(new LiteralControl("<br/><br/>"));
-                PanelOpony.Controls.Add(new LiteralControl("<br/><br/>"));
+
+                PanelOpony.Controls.Add(new LiteralControl("</p></div></center><br/>"));
+
+                PanelOpony.Controls.Add(new LiteralControl("<table>"));
+                PanelOpony.Controls.Add(new LiteralControl("<tr>"));
+                PanelOpony.Controls.Add(new LiteralControl("<td>Opis: "));
+                PanelOpony.Controls.Add(new LiteralControl("</td>"));
+                PanelOpony.Controls.Add(new LiteralControl("<td> "));
                 PanelOpony.Controls.Add(labelOpis);
-                PanelOpony.Controls.Add(new LiteralControl("<br/><br/>"));
+                PanelOpony.Controls.Add(new LiteralControl("</td>"));
+                PanelOpony.Controls.Add(new LiteralControl("</tr>"));
+                PanelOpony.Controls.Add(new LiteralControl("<tr>"));
+                PanelOpony.Controls.Add(new LiteralControl("<td>Cena: "));
+                PanelOpony.Controls.Add(new LiteralControl("</td>"));
+                PanelOpony.Controls.Add(new LiteralControl("<td>"));
                 PanelOpony.Controls.Add(labelCena);
+                PanelOpony.Controls.Add(new LiteralControl("</td>"));
+                PanelOpony.Controls.Add(new LiteralControl("</tr>"));
+                PanelOpony.Controls.Add(new LiteralControl("</table>"));
+                PanelOpony.Controls.Add(new LiteralControl("</table>"));
                 PanelOpony.Controls.Add(new LiteralControl("<br/><br/>"));
                 PanelOpony.Controls.Add(new LiteralControl("<br/><br/>"));
+
+                
             }
         }
 

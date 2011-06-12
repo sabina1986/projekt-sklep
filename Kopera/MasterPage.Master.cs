@@ -19,9 +19,6 @@ namespace Kopera
 
         }
 
-        protected void ButtonAdmin_Click(object sender, EventArgs e)
-        {
-            Response.Redirect("Logowanie.aspx");
-        }
+       
     }
 }

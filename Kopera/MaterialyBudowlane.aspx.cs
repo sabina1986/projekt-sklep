@@ -27,7 +27,7 @@ namespace Kopera
         {
             Label labelOpis;
             Label labelCena;
-            Image image;
+            //Image image;
 
 
 
@@ -48,35 +48,58 @@ namespace Kopera
 
                 List<string> nameFile = LoadNameFotoMaterialyBudowlane((string)table[3]);
 
+                PanelMaterialyBudowlane.Controls.Add(new LiteralControl(
+                "<center><div id=\"MaterialyBudowlane" + i + "\">" +
+                "<p>"
+                ));
+
                 for (int j = 0; j < nameFile.Count; ++j)
                 {
-                    image = new Image();
-                    image.ID = "image" + i + "" + j;
+                    //image = new Image();
+                    //image.ID = "image" + i + "" + j;
 
                     string sciezka = Server.MapPath("~/MaterialyBudowlane/" + nameFile[j]);
 
                     FileInfo file = new FileInfo(sciezka);
                     if (file.Exists)
                     {
-                        image.ImageUrl = sciezka;
-                        image.AlternateText = "cos zezarlo obraz";
+                        //image.ImageUrl = sciezka;
+                        //image.AlternateText = "cos zezarlo obraz";
+                        PanelMaterialyBudowlane.Controls.Add(new LiteralControl(
+                        "<a rel=\"example_group\" href=" + sciezka + " title=\"Exit (click on thema)\"><img alt=\"\" src=" + sciezka + " width=\"150\" height=\"150\"/></a>"
+                        ));
                     }
                     else
                     {
-                        image.AlternateText = "cos zezarlo obraz";
+                        //image.AlternateText = "cos zezarlo obraz";
                     }
 
-                    PanelMaterialyBudowlane.Controls.Add(new LiteralControl("<br/><br/>"));
-                    PanelMaterialyBudowlane.Controls.Add(image);
-                    PanelMaterialyBudowlane.Controls.Add(new LiteralControl("<br/><br/>"));
+                    //PanelMaterialyBudowlane.Controls.Add(new LiteralControl("<br/><br/>"));
+                    //PanelMaterialyBudowlane.Controls.Add(image);
+                    //PanelMaterialyBudowlane.Controls.Add(new LiteralControl("<br/><br/>"));
                 }
-                PanelMaterialyBudowlane.Controls.Add(new LiteralControl("<br/><br/>"));
-                PanelMaterialyBudowlane.Controls.Add(new LiteralControl("<br/><br/>"));
+                PanelMaterialyBudowlane.Controls.Add(new LiteralControl("</p></div></center><br/>"));
+
+                PanelMaterialyBudowlane.Controls.Add(new LiteralControl("<table>"));
+                PanelMaterialyBudowlane.Controls.Add(new LiteralControl("<tr>"));
+                PanelMaterialyBudowlane.Controls.Add(new LiteralControl("<td>Opis: "));
+                PanelMaterialyBudowlane.Controls.Add(new LiteralControl("</td>"));
+                PanelMaterialyBudowlane.Controls.Add(new LiteralControl("<td> "));
                 PanelMaterialyBudowlane.Controls.Add(labelOpis);
-                PanelMaterialyBudowlane.Controls.Add(new LiteralControl("<br/><br/>"));
+                PanelMaterialyBudowlane.Controls.Add(new LiteralControl("</td>"));
+                PanelMaterialyBudowlane.Controls.Add(new LiteralControl("</tr>"));
+                PanelMaterialyBudowlane.Controls.Add(new LiteralControl("<tr>"));
+                PanelMaterialyBudowlane.Controls.Add(new LiteralControl("<td>Cena: "));
+                PanelMaterialyBudowlane.Controls.Add(new LiteralControl("</td>"));
+                PanelMaterialyBudowlane.Controls.Add(new LiteralControl("<td>"));
                 PanelMaterialyBudowlane.Controls.Add(labelCena);
+                PanelMaterialyBudowlane.Controls.Add(new LiteralControl("</td>"));
+                PanelMaterialyBudowlane.Controls.Add(new LiteralControl("</tr>"));
+                PanelMaterialyBudowlane.Controls.Add(new LiteralControl("</table>"));
                 PanelMaterialyBudowlane.Controls.Add(new LiteralControl("<br/><br/>"));
                 PanelMaterialyBudowlane.Controls.Add(new LiteralControl("<br/><br/>"));
+
+
             }
         }
 

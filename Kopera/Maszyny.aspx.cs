@@ -30,7 +30,7 @@ namespace Kopera
         {
             Label labelOpis;
             Label labelCena;
-            Image image;
+            //Image image;
 
            
 
@@ -51,35 +51,58 @@ namespace Kopera
 
                 List<string> nameFile = LoadNameFotoOpony((string)table[3]);
 
+                PanelMaszyny.Controls.Add(new LiteralControl(
+                "<center><div id=\"Maszyny" + i + "\">" +
+                "<p>"
+                ));
+
                 for (int j = 0; j < nameFile.Count; ++j)
                 {
-                    image = new Image();
-                    image.ID = "image" + i + "" + j;
+                    //image = new Image();
+                    //image.ID = "image" + i + "" + j;
 
                     string sciezka = Server.MapPath("~/Maszyny/" + nameFile[j]);
 
                     FileInfo file = new FileInfo(sciezka);
                     if (file.Exists)
                     {
-                        image.ImageUrl = sciezka;
-                        image.AlternateText = "cos zezarlo obraz";
+                        //image.ImageUrl = sciezka;
+                        //image.AlternateText = "cos zezarlo obraz";
+                        PanelMaszyny.Controls.Add(new LiteralControl(
+                        "<a rel=\"example_group\" href=" + sciezka + " title=\"Exit (click on thema)\"><img alt=\"\" src=" + sciezka + " width=\"150\" height=\"150\"/></a>"
+                        ));
                     }
                     else
                     {
-                        image.AlternateText = "cos zezarlo obraz";
+                        //image.AlternateText = "cos zezarlo obraz";
                     }
 
-                    PanelMaszyny.Controls.Add(new LiteralControl("<br/><br/>"));
-                    PanelMaszyny.Controls.Add(image);
-                    PanelMaszyny.Controls.Add(new LiteralControl("<br/><br/>"));
+                    //PanelMaszyny.Controls.Add(new LiteralControl("<br/><br/>"));
+                    //PanelMaszyny.Controls.Add(image);
+                    //PanelMaszyny.Controls.Add(new LiteralControl("<br/><br/>"));
                 }
-                PanelMaszyny.Controls.Add(new LiteralControl("<br/><br/>"));
-                PanelMaszyny.Controls.Add(new LiteralControl("<br/><br/>"));
+                PanelMaszyny.Controls.Add(new LiteralControl("</p></div></center><br/>"));
+
+                PanelMaszyny.Controls.Add(new LiteralControl("<table>"));
+                PanelMaszyny.Controls.Add(new LiteralControl("<tr>"));
+                PanelMaszyny.Controls.Add(new LiteralControl("<td>Opis: "));
+                PanelMaszyny.Controls.Add(new LiteralControl("</td>"));
+                PanelMaszyny.Controls.Add(new LiteralControl("<td> "));
                 PanelMaszyny.Controls.Add(labelOpis);
-                PanelMaszyny.Controls.Add(new LiteralControl("<br/><br/>"));
+                PanelMaszyny.Controls.Add(new LiteralControl("</td>"));
+                PanelMaszyny.Controls.Add(new LiteralControl("</tr>"));
+                PanelMaszyny.Controls.Add(new LiteralControl("<tr>"));
+                PanelMaszyny.Controls.Add(new LiteralControl("<td>Cena: "));
+                PanelMaszyny.Controls.Add(new LiteralControl("</td>"));
+                PanelMaszyny.Controls.Add(new LiteralControl("<td>"));
                 PanelMaszyny.Controls.Add(labelCena);
+                PanelMaszyny.Controls.Add(new LiteralControl("</td>"));
+                PanelMaszyny.Controls.Add(new LiteralControl("</tr>"));
+                PanelMaszyny.Controls.Add(new LiteralControl("</table>"));
                 PanelMaszyny.Controls.Add(new LiteralControl("<br/><br/>"));
                 PanelMaszyny.Controls.Add(new LiteralControl("<br/><br/>"));
+
+                
             }
         }
 
