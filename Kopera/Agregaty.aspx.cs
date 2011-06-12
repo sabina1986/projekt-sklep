@@ -28,7 +28,7 @@ namespace Kopera
         {
             Label labelOpis;
             Label labelCena;
-            Image image;
+            //Image image;
 
 
 
@@ -48,42 +48,64 @@ namespace Kopera
                 labelCena.Text = table[2].ToString();
 
                 List<string> nameFile = LoadNameFotoAgregaty((string)table[3]);
+                
+                PanelAgregaty.Controls.Add(new LiteralControl(
+                "<center><div id=\"Agregaty" + i + "\">" +
+                "<p>"
+                ));
 
                 for (int j = 0; j < nameFile.Count; ++j)
                 {
-                    image = new Image();
-                    image.ID = "image" + i + "" + j;
+                    //image = new Image();
+                    //image.ID = "image" + i + "" + j;
 
                     string sciezka = Server.MapPath("~/Agregaty/" + nameFile[j]);
 
                     FileInfo file = new FileInfo(sciezka);
                     if (file.Exists)
                     {
-                        image.ImageUrl = sciezka;
-                        image.AlternateText = "cos zezarlo obraz";
+                        //image.ImageUrl = sciezka;
+                        //image.AlternateText = "cos zezarlo obraz";
+                        PanelAgregaty.Controls.Add(new LiteralControl(
+                        "<a rel=\"example_group\" href=" + sciezka + " title=\"Exit (click on thema)\"><img alt=\"\" src=" + sciezka + " width=\"150\" height=\"150\"/></a>"
+                        ));
                     }
                     else
                     {
-                        image.AlternateText = "cos zezarlo obraz";
+                        //image.AlternateText = "cos zezarlo obraz";
                     }
 
-                    image.Width = 375;
-                    image.Height = 325;
-                    if (j % 2 == 0)
-                    {
-                        PanelAgregaty.Controls.Add(new LiteralControl("<br/><br/>"));
+                    //image.Width = 375;
+                    //image.Height = 325;
+                    //if (j % 2 == 0)
+                    //{
+                       // PanelAgregaty.Controls.Add(new LiteralControl("<br/><br/>"));
 
-                    }
-                    PanelAgregaty.Controls.Add(image);
-                    PanelAgregaty.Controls.Add(new LiteralControl("&nbsp;&nbsp;&nbsp;&nbsp;"));
+                    //}
+                    ///PanelAgregaty.Controls.Add(image);
+                    //PanelAgregaty.Controls.Add(new LiteralControl("&nbsp;&nbsp;&nbsp;&nbsp;"));
                 }
-                PanelAgregaty.Controls.Add(new LiteralControl("<br/><br/>"));
-                PanelAgregaty.Controls.Add(new LiteralControl("<br/><br/>"));
+                PanelAgregaty.Controls.Add(new LiteralControl("</p></div></center><br/>"));
+
+                PanelAgregaty.Controls.Add(new LiteralControl("<table>"));
+                PanelAgregaty.Controls.Add(new LiteralControl("<tr>"));
+                PanelAgregaty.Controls.Add(new LiteralControl("<td>Opis: "));
+                PanelAgregaty.Controls.Add(new LiteralControl("</td>"));
+                PanelAgregaty.Controls.Add(new LiteralControl("<td> "));
                 PanelAgregaty.Controls.Add(labelOpis);
-                PanelAgregaty.Controls.Add(new LiteralControl("<br/><br/>"));
+                PanelAgregaty.Controls.Add(new LiteralControl("</td>"));
+                PanelAgregaty.Controls.Add(new LiteralControl("</tr>"));
+                PanelAgregaty.Controls.Add(new LiteralControl("<tr>"));
+                PanelAgregaty.Controls.Add(new LiteralControl("<td>Cena: "));
+                PanelAgregaty.Controls.Add(new LiteralControl("</td>"));
+                PanelAgregaty.Controls.Add(new LiteralControl("<td>"));
                 PanelAgregaty.Controls.Add(labelCena);
+                PanelAgregaty.Controls.Add(new LiteralControl("</td>"));
+                PanelAgregaty.Controls.Add(new LiteralControl("</tr>"));
+                PanelAgregaty.Controls.Add(new LiteralControl("</table>"));
                 PanelAgregaty.Controls.Add(new LiteralControl("<br/><br/>"));
                 PanelAgregaty.Controls.Add(new LiteralControl("<br/><br/>"));
+
             }
         }
 

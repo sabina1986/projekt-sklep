@@ -106,6 +106,7 @@ namespace Kopera
             FileUploadZdjecie.SaveAs(Server.MapPath("~/" + Kategoria + "/" + nameFile));
 
 
+
         }
 
         protected void ButtonAkceptuj_Click(object sender, EventArgs e)
