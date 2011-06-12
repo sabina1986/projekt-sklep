@@ -210,6 +210,7 @@
 //-->
 </script>
 <br />
+
 <strong>Aktualna godzina : </strong>
 <input type="text" id="godz" name="face" size="11" value="" style="text-align: center;"/>
          <!-- zegarek po angielsku -->          
@@ -240,20 +241,18 @@
                 <asp:TreeView ID="TreeView1" runat="server" DataSourceID="SiteMapDataSource1"
                     onselectednodechanged="TreeView1_SelectedNodeChanged">
                 </asp:TreeView>
+                
+                
                 <br />
-                <br />
-                Pasek nawigacji :
-                <br />
-                <div id="nawigacja" style="position: relative;">
-                <a href="javascript:drukuj()" class="ui-state-default ui-corner-allc" style="text-decoration: none;">Drukuj stronę</a><br />
-                <a href="#" id="dialog_link" class="ui-state-default ui-corner-allc"><span class="ui-icon ui-icon-newwin"></span>Autorzy</a><br />
-                <a href="Logowanie.aspx" style="text-decoration: none;" >Administracja</a>
-                <br /><br />
-                <br />
-                </div>
+                
             </div>
           
         <div id="main" style="float: right; width: 74%; height: 75%">
+        <div id="nawigacja" style="position: relative;">
+                <a href="javascript:drukuj()" class="ui-state-default ui-corner-allc" style="text-decoration: none;"><img src="button/cooltext530318006.png" border ="0" onmouseover="this.src='button/cooltext530318006MouseOver.png';" onmouseout="this.src='button/cooltext530318006.png';" /></a>
+                <a href="#" id="dialog_link" class="ui-state-default ui-corner-allc"><span class="ui-icon ui-icon-newwin"></span><img src="button/cooltext530318581.png" border ="0" onmouseover="this.src='button/cooltext530318581MouseOver.png';" onmouseout="this.src='button/cooltext530318581.png';" /></a>
+                <a href="Logowanie.aspx" style="text-decoration: none;" ><img src="button/cooltext530319015.png" border ="0" onmouseover="this.src='button/cooltext530319015MouseOver.png';" onmouseout="this.src='button/cooltext530319015.png';" /></a>
+                </div>
                      
          <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
         
